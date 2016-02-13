@@ -97,6 +97,17 @@ $registerKeys += @(`
 @{Key= "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate\AU"; Name = "ScheduledInstallTime"; Value = 3}
 )
 
+# Disable full screen update notification
+$notificationFiles = @(`
+@("$env:WINDIR\system32\MusNotification.exe")
+@("$env:WINDIR\system32\MusNotificationUx.exe")
+)
+
+forEach ($notificationFile in $notificationFiles)
+{
+    takeown /F $notificationFile
+    icacls $notificationFile --% /deny Everyone:(X)
+}
 
 AddRegisterKeys -registerKeys $registerKeys
 
