@@ -231,10 +231,14 @@ $apps = @(`
 "Microsoft.BingFinance"
 "microsoft.windowscommunicationsapps"
 "Microsoft.WindowsSoundRecorder"
+"Microsoft.Getstarted"
 "Microsoft.Windows.Photos"
 "Microsoft.WindowsCamera"
 "Microsoft.WindowsAlarms"
+"Microsoft.WindowsCalculator"
+"Microsoft.WindowsStore"
 "Microsoft.People"
+"Microsoft.XboxApp"
 )
 
 RemoveApps -apps $apps
